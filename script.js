@@ -487,20 +487,40 @@ enterView({
       console.log('a special element exited');
 
 
+      generallines1.transition().attr("opacity",0);
+
+    generalcircle1.transition().attr("opacity",0);
+
+          generaltext1.transition() .attr("opacity",0);
+    xAxisGroup1.transition().attr("opacity",0);
+      yAxisGroup1.transition().attr("opacity",0);
+
+
+      wholefiction();
+      xAxisGroup0.transition().attr("opacity",1);
+      yAxisGroup0.transition().attr("opacity",1);
+      generalviz.transition().attr("opacity",1);
+
+
 
 
    	},
 
 
     progress: function(el, progress) {
+
         console.log("the special element's progress is:", progress);
     shortViz();
+    datagroups1.attr("opacity",1);
+    d3.select(".short").transition().attr("opacity",1);
+      d3.select(".short2").transition().attr("opacity",1);
+        d3.select(".short3").transition().attr("opacity",1);
     xAxisGroup.transition().attr("opacity",0);
     yAxisGroup.transition().attr("opacity",0);
 
   	},
-    	offset: 0.5, // enter at middle of viewport
-    	once: true, // trigger just once
+    	offset: 0.50000001, // enter at middle of viewport
+    	once:true,// trigger just once
 
 
 })
@@ -605,6 +625,9 @@ enterView({
   enter:function(el){
 
 
+    // d3.select(".short").transition().attr("opacity",0);
+    //       d3.select(".short2").transition().attr("opacity",0);
+    //         d3.select(".short3").transition().attr("opacity",0);
 
 
     // xAxisGroup0.transition().attr("opacity",0);
@@ -622,13 +645,13 @@ enterView({
 
     progress: function(el, progress) {
         console.log("the special element's progress is:", progress);
-    //
 
+        d3.select(".short").transition().attr("opacity",0);
+              d3.select(".short2").transition().attr("opacity",0);
+                d3.select(".short3").transition().attr("opacity",0);
     datagroups1.attr("opacity",0);
         hisAxis();
-    d3.select(".short").transition().attr("opacity",0);
-      d3.select(".short2").transition().attr("opacity",0);
-        d3.select(".short3").transition().attr("opacity",0);
+
         generallines1.transition().attr("opacity",1);
 
       generalcircle1.transition().delay(function(d,i){return xScale1(d.year)*3})
@@ -1380,6 +1403,7 @@ function fandom4viz(){
   }
 
 
+
 }
 
 let fandomtext1 = fandomviz
@@ -1470,9 +1494,15 @@ enterView({
   exit: function(el) {
     console.log('a special element exited');
 
+
   },
   progress: function(el, progress) {
     console.log("the special element's progress is:", progress);
+    fandomc1.transition().attr("opacity",0);
+      fandomc2.transition().attr("opacity",0);
+        fandomc3.transition().attr("opacity",0);
+          fandomc4.transition().attr("opacity",0);
+          fandomc5.transition().attr("opacity",0);
   },
   // offset: 0.5, // enter at middle of viewport
   // once: true, // trigger just once
@@ -1481,9 +1511,10 @@ enterView({
   selector: '.enter1',
   enter: function(el) {
   fandomc1.transition().attr("opacity",0.4);
-    fandomc2.transition().delay(100).duration(300).attr("opacity",0.4);
-      fandomc3.transition().delay(300).duration(600).attr("opacity",0.4);
-        fandomc4.transition().delay(600).duration(900).attr("opacity",0.4);
+    fandomc2.transition().delay(500).duration(300).attr("opacity",0.4);
+      fandomc3.transition().delay(1000).duration(600).attr("opacity",0.4);
+        fandomc4.transition().delay(1500).duration(900).attr("opacity",0.4);
+        datagroups3.transition().attr("opacity",1);
   },
   exit: function(el) {
     console.log('a special element exited');
@@ -1498,12 +1529,12 @@ enterView({
 enterView({
   selector: '.enter2',
   enter: function(el) {
-        fandomc5.transition().delay(600).duration(1200).attr("opacity",0.2);
+        fandomc5.transition().delay(1200).duration(3000).attr("opacity",0.2);
+fandomviz1datagroups.transition().delay(700).duration(1500).attr("opacity",0);
+fandomviz2datagroups.transition().delay(700).duration(1500).attr("opacity",0);
+fandomviz3datagroups.transition().delay(700).duration(1500).attr("opacity",0);
 fandomviz4datagroups.transition().delay(700).duration(1500).attr("opacity",0);
-fandomviz4datagroups.transition().delay(700).duration(1500).attr("opacity",0);
-fandomviz4datagroups.transition().delay(700).duration(1500).attr("opacity",0);
-fandomviz4datagroups.transition().delay(700).duration(1500).attr("opacity",0);
-datagroups3.transition().delay(700).duration(1500).attr("opacity",0);
+datagroups3.transition().delay(1200).duration(3000).attr("opacity",0);
   },
   exit: function(el) {
     console.log('a special element exited');
